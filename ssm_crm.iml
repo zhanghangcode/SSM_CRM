@@ -9,6 +9,9 @@
         <webroots>
           <root url="file://$MODULE_DIR$/../ssm_crm/web" relative="/" />
         </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/../ssm_crm/src" />
+        </sourceRoots>
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
@@ -19,10 +22,11 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/../ssm_crm">
       <sourceFolder url="file://$MODULE_DIR$/../ssm_crm/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../ssm_crm" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="ssm" level="application" />
-    <orderEntry type="library" name="ssm" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0.52" level="application_server_libraries" />
   </component>
 </module>
