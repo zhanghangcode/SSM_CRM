@@ -5,7 +5,7 @@
 
     <!-- 别名 -->
     <typeAliases>
-        <package name="com.uuun.crm"/>
+        <package name="com.uuun.crm.pojo"/>
     </typeAliases>
 
 </configuration>
