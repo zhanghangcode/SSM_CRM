@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ import java.util.List;
  * @createTime 2019年10月23日 19:54:00
  */
 @Controller
+@RequestMapping(value = "/customer/")
 public class CustomerController {
 
     @Autowired
@@ -39,7 +41,7 @@ public class CustomerController {
     @Value("${levelType.code}")
     private String levelTypeCode;
 
-    @RequestMapping(value = "/customer/list")
+    @RequestMapping(value = "list")
     public String list(QueryVo vo, Model model){
 
         List<BaseDict> fromType = baseDictService.selectBaseDictListByCode(fromTypeCode);
@@ -59,4 +61,28 @@ public class CustomerController {
 
         return "customer";
     }
+
+    @RequestMapping(value = "edit")
+    public @ResponseBody
+    Customer edit(Integer id){
+      return   customerService.selectCustomerById(id);
+    }
+
+    @RequestMapping(value = "update")
+    public @ResponseBody
+    String update(Customer customer){
+        customerService.updateCustomerById(customer);
+        return  "OK";
+    }
+
+
+    @RequestMapping(value = "delete")
+    public @ResponseBody
+    String delete(Integer id){
+        customerService.deleteCustomerById(id);
+        return  "OK";
+    }
+
+
+
 }
